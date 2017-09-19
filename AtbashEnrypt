@@ -1,0 +1,15 @@
+from string import maketrans
+import re
+def encode(string):
+	string=''.join((string.lower()).split(' '))
+	alpha="abcdefghijklmnopqrstuvwxyz"
+	encode="zyxwvutsrqponmlkjihgfedcba"
+	trans=maketrans(alpha,encode)
+	print ' '.join(re.findall('.....',string.translate(trans)))
+
+def decode(string):
+	string=''.join((string.lower()).split(' '))
+	alpha="abcdefghijklmnopqrstuvwxyz"
+	encode="zyxwvutsrqponmlkjihgfedcba"
+	trans=maketrans(encode,alpha)
+	print string.translate(trans)
